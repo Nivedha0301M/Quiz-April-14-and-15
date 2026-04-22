@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Advanced Current Affairs MCQ</title>
+<style>
+body { font-family: Arial; background:#eef2f7; padding:20px; }
+.question { background:#fff; padding:15px; margin-bottom:15px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.option { padding:8px; margin:6px 0; border:1px solid #ccc; border-radius:6px; cursor:pointer;}
+.option:hover { background:#dceeff;}
+.correct { background:#c8f7c5 !important;}
+.wrong { background:#f7c5c5 !important;}
+.result { margin-top:10px; font-weight:bold;}
+</style>
+</head>
+<body>
+
+<h2>Advanced MCQ Practice</h2>
+<div id="quiz"></div>
+
+<script>
+
+const questions = [
+
+{
+q:`Vice President C. P. Radhakrishnan released an updated Constitution of India in Sindhi language incorporating both Devanagari and Persian scripts at Uparashtrapati Bhawan on Sindhi Bhasha Diwas (April 10, 2026). This initiative aligns with which long-term developmental vision of India?`,
+options:[
+"Digital Governance Framework 2035",
+"Amrit Kaal Vision 2040",
+"Viksit Bharat 2047",
+"National Language Integration Mission 2030"
+],
+answer:2
+},
+
+{
+q:`The updated Sindhi Constitution edition included translations in multiple scheduled languages such as Bodo, Dogri, and Santhali. Which of the following correctly describes the script usage in Sindhi editions?`,
+options:[
+"Only Persian script used historically",
+"Devanagari used in first edition and Persian in second edition",
+"Both scripts introduced simultaneously for the first time",
+"Only Devanagari script recognized officially"
+],
+answer:1
+},
+
+{
+q:`Doordarshan (DD) and Indian Council for Cultural Relations (ICCR) signed an MoU at Doordarshan Bhawan to promote global cultural outreach. What is the validity period of this agreement?`,
+options:[
+"1 year",
+"2 years",
+"3 years",
+"5 years"
+],
+answer:2
+},
+
+{
+q:`The Gujarat Government collaborated with Taiwan-linked Allegiance International Company Limited to establish an Indo-Taiwan Industrial Park in Sanand–Dholera. This initiative primarily aims to boost which strategic sector?`,
+options:[
+"Textile exports",
+"Green hydrogen production",
+"Semiconductor and electronics ecosystem",
+"Defense manufacturing corridor"
+],
+answer:2
+},
+
+{
+q:`HUDCO and NBCC signed MoUs focusing on redevelopment and asset monetisation. The redevelopment of August Kranti Bhawan covers approximately what area?`,
+options:[
+"15,200 sq. m",
+"18,830 sq. m",
+"21,450 sq. m",
+"25,000 sq. m"
+],
+answer:1
+},
+
+{
+q:`The India–Uzbekistan Joint Military Exercise ‘DUSTLIK 2026’ was conducted at Gurumsaray Field Training Area in Namangan. The exercise culminates in a validation phase lasting:`,
+options:[
+"24 hours",
+"36 hours",
+"48 hours",
+"72 hours"
+],
+answer:2
+},
+
+{
+q:`India’s MoU with Myanmar for constructing a school in Nay Pyi Taw reflects which core principle of India's foreign policy?`,
+options:[
+"Act East Policy",
+"Neighbourhood First Policy",
+"Indo-Pacific Vision",
+"Strategic Autonomy Doctrine"
+],
+answer:1
+},
+
+{
+q:`The Reserve Bank of India’s medium-term strategy ‘Utkarsh 2029’ outlines how many deliverables across six strategic pillars?`,
+options:[
+"42",
+"45",
+"49",
+"60"
+],
+answer:2
+},
+
+{
+q:`Under RBI’s Utkarsh 2029 strategy, ‘Project Sa-Mudra’ is associated with modernization of:`,
+options:[
+"Digital payments ecosystem",
+"Currency management systems",
+"Financial inclusion platforms",
+"Global remittance channels"
+],
+answer:1
+},
+
+{
+q:`SEBI’s SUPCOMS 2.1 platform replaces which traditional communication system between market participants and the regulator?`,
+options:[
+"Paper filings",
+"Telephonic communication",
+"Email-based communication",
+"SMS alerts"
+],
+answer:2
+},
+
+{
+q:`The Cyber-Sec Audit Compliance (C-SAC) platform launched by SEBI is primarily designed to:`,
+options:[
+"Regulate IPO approvals",
+"Track stock price manipulation",
+"Identify cybersecurity compliance gaps",
+"Monitor mutual fund NAVs"
+],
+answer:2
+},
+
+{
+q:`Paytm introduced biometric authentication for UPI transactions in line with RBI’s new 2-factor authentication norms effective from April 1, 2026. What is the maximum limit for cardless ATM withdrawals per transaction?`,
+options:[
+"₹5,000",
+"₹7,500",
+"₹10,000",
+"₹15,000"
+],
+answer:2
+},
+
+{
+q:`Central Ayurveda Research Institute (CARI), Bengaluru became the first CCRAS institute to receive ISO 15189:2022 accreditation. This certification relates to:`,
+options:[
+"Environmental standards",
+"Industrial quality control",
+"Medical laboratory competence",
+"Cybersecurity compliance"
+],
+answer:2
+},
+
+{
+q:`Ismaïl Omar Guelleh secured his sixth consecutive term as President of Djibouti with over 97% votes. Which political coalition does he represent?`,
+options:[
+"Democratic Reform Alliance",
+"Union for the Presidential Majority",
+"People’s National Front",
+"Unified Democratic Movement"
+],
+answer:1
+},
+
+{
+q:`NASA’s Artemis II mission, carried by the Orion capsule named ‘Integrity’, achieved which historic milestone?`,
+options:[
+"First private lunar landing",
+"First Mars orbital test",
+"First ship-to-ship communication with ISS",
+"First reusable lunar module landing"
+],
+answer:2
+},
+
+{
+q:`The 22nd Senior Asian Wrestling Championships 2026 held in Bishkek saw India secure 5th rank with 17 medals. Which country topped the medal tally?`,
+options:[
+"Japan",
+"Iran",
+"China",
+"Kazakhstan"
+],
+answer:1
+},
+
+{
+q:`In the Asian Boxing Championships 2026 held in Ulaanbaatar, which country secured the top position in medal tally?`,
+options:[
+"India",
+"Uzbekistan",
+"Kazakhstan",
+"China"
+],
+answer:2
+},
+
+{
+q:`Legendary playback singer Asha Bhosle, awarded Padma Vibhushan in 2008, was honored in which field?`,
+options:[
+"Science and Technology",
+"Literature",
+"Arts",
+"Public Affairs"
+],
+answer:2
+},
+
+{
+q:`Colonel Sonam Wangchuk, known as the ‘Lion of Ladakh’, was a recipient of which gallantry award?`,
+options:[
+"Param Vir Chakra",
+"Ashoka Chakra",
+"Mahavir Chakra",
+"Kirti Chakra"
+],
+answer:2
+},
+
+{
+q:`National Safe Motherhood Day, first observed in 2003, commemorates the birth anniversary of which personality?`,
+options:[
+"Sarojini Naidu",
+"Kasturba Gandhi",
+"Indira Gandhi",
+"Kamala Nehru"
+],
+answer:1
+},
+
+{
+q:`World Parkinson’s Day is observed annually to commemorate the birth anniversary of which scientist who first described Parkinson’s disease?`,
+options:[
+"Louis Pasteur",
+"Edward Jenner",
+"James Parkinson",
+"Alexander Fleming"
+],
+answer:2
+},
+
+{
+q:`The theme for World Parkinson’s Day 2026 is:`,
+options:[
+"Care for All",
+"Bridge the Care Gap",
+"Health for Humanity",
+"End Neuro Diseases"
+],
+answer:1
+},
+
+{
+q:`The Artificial Intelligence hub ‘Aikam’ in Telangana signed an MoU with Deakin University to promote:`,
+options:[
+"Space technology",
+"Defense research",
+"AI innovation and skilling",
+"Agricultural analytics"
+],
+answer:2
+},
+
+{
+q:`Doordarshan, India’s public service broadcaster, was established in which year?`,
+options:[
+"1947",
+"1955",
+"1959",
+"1965"
+],
+answer:2
+},
+
+{
+q:`The Indian Council for Cultural Relations (ICCR) was established in:`,
+options:[
+"1945",
+"1950",
+"1955",
+"1960"
+],
+answer:1
+},
+
+{
+q:`HUDCO, involved in urban infrastructure financing, was established in:`,
+options:[
+"1965",
+"1970",
+"1975",
+"1980"
+],
+answer:1
+},
+
+{
+q:`The Central Council for Research in Ayurvedic Sciences (CCRAS) was established in:`,
+options:[
+"1965",
+"1970",
+"1978",
+"1985"
+],
+answer:2
+},
+
+{
+q:`The National Aeronautics and Space Administration (NASA) was established in:`,
+options:[
+"1945",
+"1950",
+"1958",
+"1965"
+],
+answer:2
+},
+
+{
+q:`Unified Payments Interface (UPI), a real-time payment system in India, was launched in:`,
+options:[
+"2014",
+"2015",
+"2016",
+"2018"
+],
+answer:2
+}
+
+];
+
+const quizDiv = document.getElementById("quiz");
+
+questions.forEach((q, index) => {
+let div = document.createElement("div");
+div.className = "question";
+
+let html = `<p><b>Q${index+1}. ${q.q}</b></p>`;
+
+q.options.forEach((opt,i)=>{
+html += `<div class="option" onclick="checkAnswer(this, ${q.answer})">${opt}</div>`;
+});
+
+html += `<div class="result"></div>`;
+div.innerHTML = html;
+quizDiv.appendChild(div);
+});
+
+function checkAnswer(el, correct){
+let options = el.parentElement.querySelectorAll(".option");
+let result = el.parentElement.querySelector(".result");
+
+options.forEach((opt,i)=>{
+opt.onclick=null;
+if(i===correct) opt.classList.add("correct");
+});
+
+if([...options].indexOf(el)===correct){
+el.classList.add("correct");
+result.innerHTML="Correct ✅";
+}else{
+el.classList.add("wrong");
+result.innerHTML="Wrong ❌ (Correct answer highlighted)";
+}
+}
+
+</script>
+
+</body>
+</html>
